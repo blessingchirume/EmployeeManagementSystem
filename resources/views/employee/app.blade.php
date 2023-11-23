@@ -1,14 +1,17 @@
 <!DOCTYPE html>
 <html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
 @include('includes.head')
+
 <body class="antialiased">
-    <div class="wrapper">
-        <div class="content-wrapper" style="min-height: 0px !important;">
-            <div class="container">
-                @yield('content')
-            </div>
-        </div>
+  @include('includes.nav')
+  <div class="wrapper">
+    <div class="content-wrapper" style="min-height: 0px !important;">
+      <div class="container">
+        @yield('content')
+      </div>
     </div>
-   @include('includes.scripts')
+  </div>
+  @include('includes.scripts')
 </body>
+
 </html>

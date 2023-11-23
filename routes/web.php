@@ -15,7 +15,7 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', function () {
-    return view('welcome');
+    return redirect()->route('employee.index');
 });
 
 Route::prefix('/employee')->group(function(){
@@ -25,4 +25,5 @@ Route::prefix('/employee')->group(function(){
     Route::post('/', [EmployeeController::class, 'store'])->name('employee.store');
     Route::post('/update/{employee}', [EmployeeController::class, 'update'])->name('employee.update');
     Route::post('/delete/{employee}', [EmployeeController::class, 'destroy'])->name('employee.delete');
+    Route::get('/pdf/{employee}', [EmployeeController::class, 'generatePdf'])->name('employee.pdf');
 });

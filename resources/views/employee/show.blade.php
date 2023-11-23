@@ -8,14 +8,8 @@
                 <div class="col-sm-6">
                     <h1 class="m-0 text-dark">Employee &raquo; Edit</h1>
                 </div><!-- /.col -->
-                <div class="col-sm-6">
-                    <ol class="breadcrumb float-sm-right">
-
-
-                    </ol>
-                </div><!-- /.col -->
-            </div><!-- /.row -->
-        </div><!-- /.container-fluid -->
+            </div>
+        </div>
         <div class="container-fluid">
             @include('partials.alert')
         </div>
@@ -25,7 +19,7 @@
         <form id="update-employee-form" method="post" action="{{route('employee.update', $employee)}}">
             <div class="card-header">
                 <a href="{{ route('employee.index') }}" type="button" class="btn btn-primary float-right" style="margin-right: 5px;">
-                    <i class="fas fa-plus"></i> back
+                    back
                 </a>
             </div>
             <div class="card-body">
@@ -95,7 +89,7 @@
             </div>
             <div class="modal-footer justify-content-between">
                 <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-                <button type="button" class="btn btn-secondary" onclick="$('#update-employee-form').submit()"> <i class="fas fa-plus"></i>update</button>
+                <button type="button" class="btn btn-secondary" onclick="$('#update-employee-form').submit()">update</button>
             </div>
         </div>
     </div>
@@ -119,7 +113,7 @@
             </div>
             <div class="modal-footer justify-content-between">
                 <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-                <button type="button" class="btn btn-secondary" onclick="$('#delete-employee-form').submit()"> <i class="fas fa-plus"></i>Delete</button>
+                <button type="button" class="btn btn-secondary" onclick="$('#delete-employee-form').submit()">Delete</button>
             </div>
         </div>
     </div>

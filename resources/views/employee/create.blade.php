@@ -25,7 +25,7 @@
         <form method="post" action="{{route('employee.store')}}">
             <div class="card-header">
                 <a href="{{ route('employee.index') }}" type="button" class="btn btn-primary float-right" style="margin-right: 5px;">
-                    <i class="fas fa-plus"></i> back
+                    back
                 </a>
             </div>
             <div class="card-body">

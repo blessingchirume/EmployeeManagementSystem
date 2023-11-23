@@ -3,6 +3,9 @@
 namespace App\Http\Controllers;
 
 use App\Models\Employee;
+use Barryvdh\DomPDF\PDF;
+use Dompdf\Adapter\PDFLib;
+use Dompdf\Dompdf;
 use Illuminate\Http\Request;
 
 class EmployeeController extends Controller
@@ -68,7 +71,20 @@ class EmployeeController extends Controller
         }
     }
 
-    public function generatePdf(){
-        
+    public function generatePdf(Employee $employee)
+    {
+        $data = ['employee' => $employee];
+        $pdf = app('dompdf.wrapper');
+        $pdf->loadView('employee.pdf', $data);
+
+
+
+        // // Render the HTML as PDF
+        $pdf->render();
+
+        // // Output the generated PDF to Browser
+        return $pdf->stream();
+
+        // return view('employee.pdf', compact('employee'));
     }
 }

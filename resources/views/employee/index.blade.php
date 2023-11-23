@@ -8,12 +8,6 @@
                 <div class="col-sm-6">
                     <h1 class="m-0 text-dark">Employee &raquo; Listing</h1>
                 </div><!-- /.col -->
-                <div class="col-sm-6">
-                    <ol class="breadcrumb float-sm-right">
-
-
-                    </ol>
-                </div><!-- /.col -->
             </div><!-- /.row -->
         </div><!-- /.container-fluid -->
         <div class="container-fluid">
@@ -23,7 +17,7 @@
     <div class="card">
         <div class="card-header">
             <a href="{{ route('employee.create') }}" type="button" class="btn btn-primary float-right" style="margin-right: 5px;">
-                <i class="fas fa-plus"></i> Generate
+                Generate
             </a>
         </div>
         <div class="card-body">
@@ -52,7 +46,9 @@
                         <td>{{$employee->created_at}}</td>
                         <td>{{$employee->updated_at}}</td>
                         <td>
-                            <a href="{{ route('employee.show', $employee)}}"><i class="fa fa-eye success"></i> view</a>
+                            <a href="{{ route('employee.show', $employee)}}">view</a>
+                            <a href="{{ route('employee.pdf', $employee)}}">pdf</a>
+
                         </td>
                     </tr>
                     @endforeach
